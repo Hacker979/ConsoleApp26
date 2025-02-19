@@ -8,15 +8,15 @@ namespace ConsoleApp26
 {
     class Program
     {
-        static void Print(int[] mas,ref int b)
+        static void Print(int[] mas,ref int b, ref int c)
         {
             foreach (int i in mas)
             {
                 Console.Write(i + " ");
             }
-            Console.WriteLine($"\nминимальное = {b}");
+            Console.WriteLine($"\nминимальное = mas[{c}] {b}");
         }
-        static void Write(int[] mas, ref int b)
+        static void Write(int[] mas, ref int b, ref int c )
         {
             Random rand = new Random();
             for (int i = 0; i < mas.Length; i++)
@@ -25,7 +25,7 @@ namespace ConsoleApp26
                 Console.WriteLine($"mas[{i}] = {mas[i]}");
                 if (mas[i] < b)
                 {
-                    c = i
+                    c = i;
                     b = mas[i];
                 }
             }
@@ -34,8 +34,9 @@ namespace ConsoleApp26
         {
             int[] mas = new int[5];
             int b = mas[0];
-            Write( mas, ref b);
-            Print( mas, ref b);
+            int c = 0;
+            Write( mas, ref b,ref c);
+            Print( mas, ref b, ref c);
 
         }
         static void Main(string[] args)
