@@ -8,27 +8,31 @@ namespace ConsoleApp26
 {
     class Program
     {
-        static void Print(int[] mas)
+        static void Print(int[] mas, int min, ref int b)
         {
             foreach (int i in mas)
             {
                 Console.Write(i + " ");
             }
+            Console.WriteLine($"\nчисел больше {min} = {b}");
         }
-        static void Write(int a, int[] mas)
+        static void Write(int[] mas, int min, ref int b)
         {
-            for (int i = 0; i < a; i++)
+            for (int i = 0; i < mas.Length; i++)
             {
-                Console.WriteLine($"mas[{i}] = {i}");
-                mas[i] = i;
+                if (mas[i] >= min)
+                {
+                    b++;
+                }
             }
         }
         static void Mas()
         {
-            int a = int.Parse(Console.ReadLine());
-            int[] mas = new int[a];
-            Write(a, mas);
-            Print(mas);
+            int min = int.Parse(Console.ReadLine());
+            int b = 0;
+            int[] mas = new int[5] {4, 5, 6, 3, 7 } ;
+            Write( mas, min, ref b);
+            Print(mas, min, ref b);
 
         }
         static void Main(string[] args)
