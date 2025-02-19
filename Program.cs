@@ -18,18 +18,21 @@ namespace ConsoleApp26
         }
         static void Write(int[] mas, ref int b)
         {
-            
+            Random rand = new Random();
             for (int i = 0; i < mas.Length; i++)
             {
+                mas[i] = rand.Next(-10, 10);
+                Console.WriteLine($"mas[{i}] = {mas[i]}");
                 if (mas[i] < b)
                 {
+                    c = i
                     b = mas[i];
                 }
             }
         }
         static void Mas()
         {
-            int[] mas = new int[5] {4, 5, 6, 3, 7 } ;
+            int[] mas = new int[5];
             int b = mas[0];
             Write( mas, ref b);
             Print( mas, ref b);
