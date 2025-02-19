@@ -8,22 +8,32 @@ namespace ConsoleApp26
 {
     class Program
     {
-        static void mas(int a)
+        static void Print(int[] mas)
         {
-            int[] mas = new int[a];
-            for (int i = 0; i<a; i++)
-            {
-                Console.Write($"mas[{i}] = ");
-                mas[i] = int.Parse(Console.ReadLine());
-            }
             foreach (int i in mas)
             {
                 Console.Write(i + " ");
             }
         }
+        static void Write(int a, int[] mas)
+        {
+            for (int i = 0; i < a; i++)
+            {
+                Console.Write($"mas[{i}] = ");
+                mas[i] = int.Parse(Console.ReadLine());
+            }
+        }
+        static void Mas()
+        {
+            int a = int.Parse(Console.ReadLine());
+            int[] mas = new int[a];
+            Write(a, mas);
+            Print(mas);
+
+        }
         static void Main(string[] args)
         {
-            mas(int.Parse(Console.ReadLine()));
+            Mas();
 
             Console.ReadLine();
         }
