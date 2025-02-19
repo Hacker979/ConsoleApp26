@@ -10,12 +10,12 @@ namespace ConsoleApp26
     {
         static void mas(int a)
         {
-            Random rand = new Random();
             int[] mas = new int[a];
             for (int i = 0; i<a; i++)
             {
-                mas[i] = rand.Next(-10,10);
+                mas[i] = i;
             }
+
             foreach (int i in mas)
             {
                 Console.Write(i + " ");
