@@ -35,7 +35,7 @@ namespace ConsoleApp26
             int[] mas = new int[5];
             int b = mas[0];
             int c = 0;
-            Write( mas, ref b,ref c);
+            Write( mas, ref b, ref c);
             Print( mas, ref b, ref c);
 
         }
